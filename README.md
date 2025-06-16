@@ -17,7 +17,7 @@ This repo contains Java solutions for problems I solve daily on platforms like *
 
 | 📌 Topic             | ✅ Status     |
 |----------------------|--------------|
-| 📊 Sorting           | ✅ Ongoing    |
+| 📊 Sorting           | ✅ Completed   |
 | 🔢 Arrays            | ⏳ Coming Soon |
 | 🔤 Strings           | ⏳ Coming Soon |
 | 🔁 Recursion         | ⏳ Coming Soon |
