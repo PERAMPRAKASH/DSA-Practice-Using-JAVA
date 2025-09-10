@@ -50,22 +50,7 @@ public class NextPermutation {
     }
 
 //"----------------------------------------------------------------------"
-  
-    public static void main(String[] args) {
-        NextPermutation np = new NextPermutation();
-        ArrayList<Integer> current = new ArrayList<>(Arrays.asList(1, 3, 2));
-        ArrayList<Integer> next = np.findNextPermutation(current);
-        System.out.println("Current permutation: " + current);
-        System.out.println("Next permutation: " + next);
-    }
-    //Optimized Approach:
-    public static void main(String []args){
-        int[] arr={1,3};
-        int[] result=nextPermutation(arr);
-        for(int num:result){
-            System.out.print(num+" ");
-        }
-    }
+    //OptimizedApproach:
     public static int[] nextPermutation(int[] arr){
         int n=arr.length;
         int index= -1;
@@ -99,6 +84,27 @@ public class NextPermutation {
             Swap(first,end,arr);
             first++;
             end--;
+        }
+    }
+
+    //Main method for both Approaches:
+    public static void main(String[] args) {
+        NextPermutation np = new NextPermutation();
+
+        // Brute Force Approach
+        ArrayList<Integer> current = new ArrayList<>(Arrays.asList(1, 3, 2));
+        ArrayList<Integer> nextBrute = np.findNextPermutation(new ArrayList<>(current));
+        System.out.println("Brute Force:");
+        System.out.println("Current permutation: " + current);
+        System.out.println("Next permutation: " + nextBrute);
+
+        // Optimized Approach
+        int[] arr = {1, 3};
+        int[] result = nextPermutation(arr);
+        System.out.println("\nOptimized:");
+        System.out.print("Next permutation: ");
+        for (int num : result) {
+            System.out.print(num + " ");
         }
     }
 }
