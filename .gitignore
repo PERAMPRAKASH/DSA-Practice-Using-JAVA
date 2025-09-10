@@ -1,6 +1,6 @@
 # Ignore compiled Java files
 *.class
-
+*.txt
 # Optional: Ignore build and IDE files
 /build/
 /out/
