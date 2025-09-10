@@ -1,5 +1,6 @@
 import java.util.*;
 public class NextPermutation {
+    //BruteForce Approach:
     public ArrayList<ArrayList<Integer>> permutations(){
         int[] arr={1,3,2};
         ArrayList<ArrayList<Integer>> result=new ArrayList<>();
@@ -35,12 +36,9 @@ public class NextPermutation {
     }
     public ArrayList<Integer> findNextPermutation(ArrayList<Integer> current) {
         ArrayList<ArrayList<Integer>> allPermutations = permutations();
-        // Sort permutations lexicographically
         allPermutations.sort((a, b) -> compareLists(a, b));
-        // Linear search for current permutation
         for (int i = 0; i < allPermutations.size(); i++) {
             if (allPermutations.get(i).equals(current)) {
-                // Return next permutation if exists, else first permutation
                 if (i + 1 < allPermutations.size()) {
                     return allPermutations.get(i + 1);
                 } else {
@@ -48,8 +46,11 @@ public class NextPermutation {
                 }
             }
         }
-        return null; // current permutation not found
+        return null; 
     }
+
+//"----------------------------------------------------------------------"
+  
     public static void main(String[] args) {
         NextPermutation np = new NextPermutation();
         ArrayList<Integer> current = new ArrayList<>(Arrays.asList(1, 3, 2));
@@ -57,4 +58,49 @@ public class NextPermutation {
         System.out.println("Current permutation: " + current);
         System.out.println("Next permutation: " + next);
     }
+    //Optimized Approach:
+    public static void main(String []args){
+        int[] arr={1,3};
+        int[] result=nextPermutation(arr);
+        for(int num:result){
+            System.out.print(num+" ");
+        }
+    }
+    public static int[] nextPermutation(int[] arr){
+        int n=arr.length;
+        int index= -1;
+        for(int i=n-2;i>=0;i--){
+            if(arr[i]<arr[i+1]){
+                index=i;
+                break;
+            }
+        }
+        if(index== -1){
+                reverse(arr,0,n);
+                return arr;
+            }
+        for(int i=n-1;i>index;i--){
+            if(arr[i]>arr[index]){
+                Swap(i,index,arr);
+                break;
+            }
+        }
+        reverse(arr,index+1,n);
+        return arr;
+    }
+    public static void Swap(int i, int j, int[] arr){
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+    public static void reverse(int[] arr,int first, int end){
+        end--;
+        while(first<end){
+            Swap(first,end,arr);
+            first++;
+            end--;
+        }
+    }
 }
+
+
