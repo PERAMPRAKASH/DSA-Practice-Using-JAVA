@@ -11,7 +11,6 @@ class SetMatrixZeros{
         int m=matrix.get(0).size();
         ArrayList<ArrayList<Integer>> ans=zeroMatrixBruteForce(matrix,n,m);
         ArrayList<ArrayList<Integer>> ans1=zeroMatrixBetter(matrix,n,m);
-        ArrayList<ArrayList<Integer>> ans2=zeroMatrixOptimal(matrix,n,m);
         for(ArrayList<Integer> row:ans1){
             for(Integer ele:row){
                 System.out.print(ele+" ");
