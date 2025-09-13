@@ -74,9 +74,4 @@ class SetMatrixZeros{
         
         return matrix;
     }
-//-------------------------------------------------------------------------------------------------------------------------------------------
-    public static ArrayList<ArrayList<Integer>> zeroMatrixOptimal(ArrayList<ArrayList<Integer>> matrix,int n, int m){
-        
-        return matrix;
-    }
 }
